@@ -33,7 +33,15 @@
                     <p>웹디자이너, 웹퍼블리셔, 프론트엔드 개발자를 위한 게시판입니다.</p>
                 </div>
             <div class="board__search">
-                        <div class="left">총 <em>????</em>건의 게시물이 등록되어 있습니다.</div>
+                        <div class="left">
+                            <!-- 총 <em>????</em>건의 게시물이 등록되어 있습니다. -->
+<?php
+    $sql = "SELECT myBoardID FROM myBoard";
+    $result = $connect -> query($sql);
+    $count = $result -> num_rows;
+    echo "총 <em>".$count."</em>건의 게시물이 등록되어 있습니다.";
+?>
+                        </div>
                         <div class="right">
                             <form action="boardSearch.php" name="boardSearch" method="get">
                                 <fieldset>
@@ -112,6 +120,8 @@
                 echo "<td>".$info['boardView']."</td>";
                 echo "</tr>";
             }
+        } else {
+            echo "<tr><td colspan='5'>게시글이 없습니다.</td></tr>";
         }
     }
 ?>
@@ -219,7 +229,6 @@
         echo "<li><a href='board.php?page=1'>처음으로</a></li>";
         echo "<li><a href='board.php?page={$prevPage}'>이전</a></li>";
     }
-
     
     // 페이지 넘버 표시
     for($i=$startPage; $i<=$endPage; $i++){
@@ -234,7 +243,7 @@
         echo "<li><a href='board.php?page={$nextPage}'>다음</a></li>";
         echo "<li><a href='board.php?page={$boardCount}'>마지막으로</a></li>";
     }
-    ?>
+?>
                             <!-- <li><a href="#">처음으로</a></li>
                             <li><a href="#">이전</a></li>
                             <li><a class="active" href="#">1</a></li>
