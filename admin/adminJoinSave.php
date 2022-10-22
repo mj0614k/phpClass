@@ -50,6 +50,7 @@
                     $sql = "INSERT INTO myAdminMember(youEmail, youNickName, youName, youPass, youBirth, youPhone, regTime) VALUES('$youEmail', '$youNickName', '$youName', '$youPass', '$youBirth', '$youPhone', '$regTime')";
                     $result = $connect -> query($sql);
 
+                    // msg는 태그가 안먹어
                     if($result){
                         echo "회원가입을 축하합니다. 로그인을 해주세요.";
                     } else {

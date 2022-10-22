@@ -21,18 +21,10 @@
                 </div>
                 <nav class="nav">
                     <ul>
-                        <li>
-                            <a href="../login/join.php"><span>SIGN UP</span></a>
-                        </li>
-                        <li>
-                            <a href="../board/board.php"><span>BOARD</span></a>
-                        </li>
-                        <li>
-                            <a href="#"><span>LOGOUT</span></a>
-                        </li>
-                        <li>
-                            <a href="#"><span>CONTACT</span></a>
-                        </li>
+                        <li><a href="../login/join.php"><span>SIGN UP</span></a></li>
+                        <li><a href="../board/board.php"><span>BOARD</span></a></li>
+                        <li><a href="../blog/blog.php"><span>BLOG</span></a></li>
+                        <li><a href="#"><span>CONTACT</span></a></li>
                     </ul>
                 </nav>
             </div>
